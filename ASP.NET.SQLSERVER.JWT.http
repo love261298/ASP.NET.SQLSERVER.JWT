@@ -1,0 +1,6 @@
+@ASP.NET.SQLSERVER.JWT_HostAddress = http://localhost:5230
+
+GET {{ASP.NET.SQLSERVER.JWT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
