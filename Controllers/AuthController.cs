@@ -34,7 +34,11 @@ namespace ASP.NET.SQLSERVER.JWT.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
+<<<<<<< HEAD
             return Ok(new { message = "User registered." });
+=======
+            return Ok("User registered.");
+>>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
         }
 
         [HttpPost("login")]
@@ -51,8 +55,12 @@ namespace ASP.NET.SQLSERVER.JWT.Controllers
             {
                 message = "Login successful",
                 token,
+<<<<<<< HEAD
                 role = user.Role,
                 userId = user.Id
+=======
+                role = user.Role
+>>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
             });
         }
     }
