@@ -7,7 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
-<<<<<<< HEAD
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins("http://localhost:4200")
@@ -15,15 +14,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod()
               .AllowCredentials();
     });
-=======
-    options.AddPolicy("AllowLocalhost5000",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5000")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-        });
->>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
 });
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -72,10 +62,6 @@ builder.Services.AddSwaggerGen(c =>
             new string[] {}
         }
     };
-<<<<<<< HEAD
-=======
-
->>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
     c.AddSecurityRequirement(securityRequirement);
 });
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -90,26 +76,17 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 builder.Services.AddScoped<TokenService>();
 var app = builder.Build();
-<<<<<<< HEAD
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
-=======
-app.UseCors("AllowLocalhost5000");
->>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-<<<<<<< HEAD
-=======
-
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
->>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
 app.MapControllers();
 
 app.Run();

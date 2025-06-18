@@ -11,7 +11,6 @@ namespace ASP.NET.SQLSERVER.JWT.Data
         public DbSet<Blog> Blogs { get; set; }
 
         public DbSet<Message> Messages { get; set; }
-<<<<<<< HEAD
 
         public DbSet<Image> Images { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
@@ -78,7 +77,5 @@ namespace ASP.NET.SQLSERVER.JWT.Data
                 .WithMany(c => c.UserConversations)
                 .HasForeignKey(uc => uc.ConversationId);
         }
-=======
->>>>>>> 29b717529d48c47e43a0d479a6466c2d2b48c4df
     }
 }
